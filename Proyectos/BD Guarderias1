@@ -1,0 +1,46 @@
+CREATE DATABASE GUARDERIAS1;
+USE GUARDERIAS1;
+
+CREATE TABLE GUARDERIA_Menu(
+ID_Menu int not null PRIMARY KEY,
+Descripcion_menu VARCHAR (60),
+Dia VARCHAR (15),
+Costo VARCHAR (4));
+
+SELECT *
+FROM GUARDERIA_Menu
+
+CREATE TABLE GUARDERIA_Platillo(
+ID_Platillo int not null PRIMARY KEY,
+Nombre_platillo VARCHAR (10),
+Descripcion_platillo VARCHAR (60),
+Costo_platillo VARCHAR (3),
+ID_Menu1 int FOREIGN KEY references GUARDERIA_Menu (ID_Menu));
+
+SELECT *
+FROM GUARDERIA_Platillo
+
+INSERT INTO GUARDERIA_Menu
+VALUES (0001, 'Papas con pollo y jugo de manzana', '23/02/2020', '$80')
+INSERT INTO GUARDERIA_Menu
+VALUES (0002, 'Tinga de pollo y jugo de pera ', '02/07/2020', '$85')
+INSERT INTO GUARDERIA_Menu
+VALUES (0003, 'Sincronizadas con jugo de fresa', '16/01/2020','$70')
+INSERT INTO GUARDERIA_Menu
+VALUES (0004, 'Sandwich de pollito con papas con agua de limòn', '05/06/2020', '$50')
+
+SELECT *
+FROM GUARDERIA_Menu
+
+INSERT INTO GUARDERIA_Platillo
+VALUES (01, 'Sincron', 'Tortillas de harina con queso y jamon', '$50', 0003)
+INSERT INTO GUARDERIA_Platillo
+VALUES (02, 'Tinga', 'Pollo deshebrado en salsa de jitomate', '$70', 0002)
+INSERT INTO GUARDERIA_Platillo
+VALUES (03, 'Sandwich ', 'Pan de caja con pollo deshebrado, jitomate, pepinos', '$35', 0004)
+INSERT INTO GUARDERIA_Platillo
+VALUES (04, 'Papas ', 'Papas hervidas con pollo deshebrado y salsa de jitomate', '$70', 0001)
+
+SELECT *
+FROM GUARDERIA_Platillo
+

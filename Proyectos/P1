@@ -1,0 +1,52 @@
+
+<html>
+    <head>
+        <title>Brandon Aguilar Rojas</title>
+        <meta name="viewport" content="user-scalable=no, width=device-width" />
+        <link rel="stylesheet" type="text/css" href="android.css" media="only screen and (max-width: 480px)" />
+        <link rel="stylesheet" type="text/css" href="desktop.css" media="screen and (min-width: 481px)" />
+        <!--[if IE]>
+            <link rel="stylesheet" type="text/css" href="explorer.css" media="all" />
+        <![endif]-->
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript" src="android.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <marquee><h1><a href="./">Brandon Aguilar Rojas</a></h1></marquee>
+                <div id="utility">
+                    <ul>
+                        <li><a href="about.html">Acerca</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div id="nav">
+                    <ul>
+                        <li><a href="consulting-clinic.html">Clinica de Consultas</a></li>
+                        <li><a href="on-call.html">Llamame</a></li>
+                        <li><a href="development.html">Desarrollador</a></li>
+                        <li><a href="http://www.oreilly.com">O'Reilly Media, Inc.</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="content">
+                <h2>About</h2>
+                <p>Brandon Rojas es un estudiante de la UPIICSA, de la Licenciatura en Ciencias de la Informatica, el cual esta cursando actualmente el quinto semestre. El es un gran fanatico de difetenes cosas, pero ama mas su instituto.</p>
+            </div>
+            <div id="sidebar">
+                <img alt="Manga Portrait of Jonathan Stark" src="jonathanstark-manga-small.png">
+                <p>Brandon Aguilar Rojas es una aplicacion web y movil.</p>
+            </div>
+            <div id="footer">
+                <ul>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="about.html">Acerca</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+                <p class="subtle">Brandon AGuilar Rojas Consulting, Inc.</p>
+            </div>
+        </div>
+    </body>
+</html>

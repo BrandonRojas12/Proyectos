@@ -1,0 +1,47 @@
+CREATE DATABASE Proyecto_equipo3;
+USE EARR_primer_ejercicio;
+
+
+CREATE TABLE EQ3_encargado(
+Id_encargado int not null primary key,
+Nom_encargdo varchar(30),
+Dir_encargado varchar(30),
+Cuenta_banco_encargado varchar(30)
+);
+select *
+from EQ3_encargado
+
+CREATE TABLE EQ3_niño(
+Boleta_niño int not null primary key,
+Nom_niño varchar(30),
+Fecha_naci varchar(30),
+Fecha_ingreso varchar(30),
+Alergias_niño varchar(30),
+Estatus_niño varchar(30),
+Mensualidad_niño varchar(30),
+Cuenta_banco_encargado varchar(30)
+);
+select *
+from EQ3_niño
+
+INSERT INTO EQ3_encargado
+values (01, 'Juan López', 'Avenida Té', '55467356')
+INSERT INTO EQ3_encargado
+values (02, 'Andres Ruiz', 'Av. A', '556797545')
+INSERT INTO EQ3_encargado
+values (03, 'Romina Quiroz', 'Av. L', '55607982')
+INSERT INTO EQ3_encargado
+values (04, 'David Pérez', 'Blvd. 4', '12546780')
+SELECT *
+FROM EQ3_encargado
+
+INSERT INTO EQ3_niño
+values (001, 'Adrián Trejo', '25/06/2003', '25/06/2003', 'Ninguna', 'Pagado', '5000', '456987123')
+INSERT INTO EQ3_niño
+values (002, 'Antonio Camargo', '30/04/2000', '30/04/2001', 'Fresa', 'Pagado', '5000', '569802623')
+INSERT INTO EQ3_niño
+values (003, 'Franco Ruíz', '03/11/2002', '03/11/2003', 'Guayaba', 'Adeudo', '4500', '698547123')
+INSERT INTO EQ3_niño
+values (004, 'Israel Zepeda', '05/06/1999', '05/06/2000', 'Ninguna', 'Pagado', '5000', '985761423')
+SELECT *
+FROM EQ3_niño

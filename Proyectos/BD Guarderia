@@ -1,0 +1,206 @@
+CREATE DATABASE EQUIPO3_GUARDERIA;
+USE EQUIPO3_GUARDERIA
+
+CREATE TABLE EQUIPO3_INGREDIENTE(
+ID_INGREDIENTE int NOT NULL PRIMARY KEY,
+NOMBRE_INGREDIENTE varchar (20),
+CANTIDAD_INGREDIENTE varchar (20),
+COSTO_INGREDIENTE varchar (15),
+);
+
+SELECT *
+FROM EQUIPO3_INGREDIENTE
+
+ALTER TABLE EQUIPO3_INGREDIENTE
+ADD TIPO_INGREDIENTE varchar (10),
+
+SELECT *
+FROM EQUIPO3_INGREDIENTE
+
+UPDATE EQUIPO3_INGREDIENTE
+SET TIPO_INGREDIENTE= 'Natural'
+WHERE ID_INGREDIENTE =01
+
+UPDATE EQUIPO3_INGREDIENTE
+SET TIPO_INGREDIENTE= 'Natural'
+WHERE ID_INGREDIENTE =02
+
+UPDATE EQUIPO3_INGREDIENTE
+SET TIPO_INGREDIENTE= 'Natural'
+WHERE ID_INGREDIENTE =03
+
+UPDATE EQUIPO3_INGREDIENTE
+SET TIPO_INGREDIENTE= 'Natural'
+WHERE ID_INGREDIENTE =04
+
+
+
+CREATE TABLE EQUIPO3_PLATILLO_INGREDIENTE(
+ID_PLATILLO_2 int FOREIGN KEY references EQUIPO3_PLATILLO (ID_PLATILLO),
+ID_INGREDIENTE_1 int FOREIGN KEY references EQUIPO3_INGREDIENTE (ID_INGREDIENTE),
+);
+
+SELECT *
+FROM EQUIPO3_PLATILLO_INGREDIENTE
+
+insert into EQUIPO3_INGREDIENTE
+values (01, 'Cebolla', '10 Kilos', '$200')
+
+insert into EQUIPO3_INGREDIENTE
+values (02, 'Jitomate', '8 Kilos', '$170')
+
+insert into EQUIPO3_INGREDIENTE
+values (03, 'Pollo', '4 Pollos', '$500')
+
+insert into EQUIPO3_INGREDIENTE
+values (04, '´Res', '6 Kilos', '$500')
+
+insert into EQUIPO3_PLATILLO_INGREDIENTE
+values (01, 001)
+
+insert into EQUIPO3_PLATILLO_INGREDIENTE
+values (02, 002)
+
+insert into EQUIPO3_PLATILLO_INGREDIENTE
+values (03, 003)
+
+insert into EQUIPO3_PLATILLO_INGREDIENTE
+values (04, 004)
+
+CREATE TABLE EQUIPO3_encargado(
+Id_encargado int not null primary key,
+Nom_encargdo varchar(30),
+Dir_encargado varchar(30),
+Cuenta_banco_encargado varchar(30)
+);
+select *
+from EQUIPO3_encargado
+
+CREATE TABLE EQUIPO3_niño(
+Boleta_niño int not null primary key,
+Nom_niño varchar(30),
+Fecha_naci varchar(30),
+Fecha_ingreso varchar(30),
+Alergias_niño varchar(30),
+Estatus_niño varchar(30),
+Mensualidad_niño varchar(30),
+Cuenta_banco_encargado varchar(30)
+);
+select *
+from EQUIPO3_niño
+
+INSERT INTO EQUIPO3_encargado
+values (01, 'Juan López', 'Avenida Té', '55467356')
+INSERT INTO EQUIPO3_encargado
+values (02, 'Andres Ruiz', 'Av. A', '556797545')
+INSERT INTO EQUIPO3_encargado
+values (03, 'Romina Quiroz', 'Av. L', '55607982')
+INSERT INTO EQUIPO3_encargado
+values (04, 'David Pérez', 'Blvd. 4', '12546780')
+SELECT *
+FROM EQUIPO3_encargado
+
+INSERT INTO EQUIPO3_niño
+values (001, 'Adrián Trejo', '25/06/2003', '25/06/2003', 'Ninguna', 'Pagado', '5000', '456987123')
+INSERT INTO EQUIPO3_niño
+values (002, 'Antonio Camargo', '30/04/2000', '30/04/2001', 'Fresa', 'Pagado', '5000', '569802623')
+INSERT INTO EQUIPO3_niño
+values (003, 'Franco Ruíz', '03/11/2002', '03/11/2003', 'Guayaba', 'Adeudo', '4500', '698547123')
+INSERT INTO EQUIPO3_niño
+values (004, 'Israel Zepeda', '05/06/1999', '05/06/2000', 'Ninguna', 'Pagado', '5000', '985761423')
+SELECT *
+FROM EQUIPO3_niño
+
+create table EQUIPO3_controlalimento(
+IdClave_control int not null primary key,
+dia datetime char (10),
+hora  datetime char (10),
+Id_menu int foreing key references EQUIPO3_menu (Id_menu),
+);
+
+select*
+from EQUIPO3_controlalimento
+
+insert into Id_Clave_control;
+values (01)
+
+insert into Id_Clave_control;
+values (02)
+
+insert into Id_Clave_control;
+values (03)
+
+insert into dia 
+values (10/10/2020)
+
+insert into dia 
+values (20/02/2020) 
+
+insert into dia 
+values (15/01/2021)
+
+insert into hora 
+values (14:30)
+
+insert into hora 
+values (08:20)
+
+insert into hora 
+values (15:28)
+
+CREATE TABLE GUARDERIA_Menu(
+ID_Menu int not null PRIMARY KEY,
+Descripcion_menu VARCHAR (60),
+Dia VARCHAR (15),
+Costo VARCHAR (4));
+
+SELECT *
+FROM GUARDERIA_Menu
+
+CREATE TABLE GUARDERIA_Platillo(
+ID_Platillo int not null PRIMARY KEY,
+Nombre_platillo VARCHAR (10),
+Descripcion_platillo VARCHAR (60),
+Costo_platillo VARCHAR (3),
+ID_Menu1 int FOREIGN KEY references GUARDERIA_Menu (ID_Menu));
+
+SELECT *
+FROM GUARDERIA_Platillo
+
+INSERT INTO GUARDERIA_Menu
+VALUES (0001, 'Papas con pollo y jugo de manzana', '23/02/2020', '$80')
+INSERT INTO GUARDERIA_Menu
+VALUES (0002, 'Tinga de pollo y jugo de pera ', '02/07/2020', '$85')
+INSERT INTO GUARDERIA_Menu
+VALUES (0003, 'Sincronizadas con jugo de fresa', '16/01/2020','$70')
+INSERT INTO GUARDERIA_Menu
+VALUES (0004, 'Sandwich de pollito con papas con agua de limòn', '05/06/2020', '$50')
+
+SELECT *
+FROM GUARDERIA_Menu
+
+INSERT INTO GUARDERIA_Platillo
+VALUES (01, 'Sincron', 'Tortillas de harina con queso y jamon', '$50', 0003)
+INSERT INTO GUARDERIA_Platillo
+VALUES (02, 'Tinga', 'Pollo deshebrado en salsa de jitomate', '$70', 0002)
+INSERT INTO GUARDERIA_Platillo
+VALUES (03, 'Sandwich ', 'Pan de caja con pollo deshebrado, jitomate, pepinos', '$35', 0004)
+INSERT INTO GUARDERIA_Platillo
+VALUES (04, 'Papas ', 'Papas hervidas con pollo deshebrado y salsa de jitomate', '$70', 0001)
+
+SELECT *
+FROM GUARDERIA_Platillo
+
+CREATE VIEW BGAR_COMIDA_NIÑO AS(
+SELECT Boleta_niño, ID_INGREDIENTE, NOMBRE_INGREDIENTE, ID_Menu, Nombre_platillo
+WHERE GUARDERIA_Menu * EQUIPO3_INGREDEINTE * EQUIPO3_niño AND GUARDERIA_Platillo
+)
+
+SELECT * FROM BGAR_COMIDA_NIÑO
+
+CREATE VIEW BGAR_NIÑO_ENCARGADO AS(
+SELECT ID_NIÑO, Nom_niño, Estatus_niño, Mensualidad_niño, Nom_encargao, Cuenta_banco_encargado
+FROM EQUIPO3_encargado AND EQUIPO3_niño
+)
+
+SELECT * FROM BGAR_NIÑO_ENCARGADO

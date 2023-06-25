@@ -1,0 +1,20 @@
+#include<stdio.h> 
+void factorial (int x) 	/* definición de función */ 
+{
+ int i;
+ long int fac = 1;
+ for (i=2; i<=x; i=i+1) fac=fac*i; 
+printf ("El factorial de %d es %ld", x, fac); 
+} 
+main () 	/* función principal */
+ { 
+int a;
+ do 
+{ 
+printf ("\n Introduce el numero "); 
+scanf ("%d", &a); 
+if (a>0) 
+factorial (a);
+ } while (a > 0);
+ }
+

@@ -1,0 +1,69 @@
+CREATE DATABASE Bibliotecas0;
+USE [Escuela biblio]
+
+CREATE TABLE Escuelas(
+Cve_Escuela char (20) not null PRIMARY KEY,
+Desc_Escuela char (60) not null);
+
+SELECT *
+FROM Escuelas
+
+CREATE TABLE Carreras(
+Cve_Carreras char (10) not null PRIMARY KEY,
+Desc_Carreras char (60) not null);
+
+SELECT *
+FROM Carreras
+
+CREATE TABLE Alumno(
+No_boleta char (10) not null PRIMARY KEY,
+Nombre_A char (40) not null,
+Semestre_A int not null,
+Dir_A char (40) not null,
+Tel_A char (10) not null
+Cve_Carreras char (10) not null FOREIGN KEY references Carreras (Cve_Carreras),
+);
+
+SELECT *
+FROM Alumno
+
+CREATE TABLE Biblioteca(
+Nombre_B char (40) not null PRIMARY KEY,
+Nom_Per_responsable char (40) not null,
+Cant_Volumenes_res int not null,
+Cant_Anaquel_res int not null,
+Cant_Escritorios_res int not null,
+Cant_Sillas_res int not null
+Desc_Escuelas char (10) not null FOREIGN KEY references Escuelas (Desc_Escuelas));
+
+SELECT *
+FROM Biblioteca
+
+CREATE TABLE Volumen(
+No_Volumen int not null PRIMARY KEY,
+Titulo char (40) not null,
+Autor char (40) not null,
+Editorial char (40) not null,
+Fecha_ed date null,
+Fecha_prestamo date null,
+No_consultas int null,
+Ubicacion char (40) not null,
+Nombre_B char (40) not null FOREIGN KEY references Biblioteca (Nombre_B),
+No_Boleta char (10) null FOREIGN KEY references Alumno (No_Boleta),
+);
+
+INSERT INTO Escuelas
+values (01, '467356')
+INSERT INTO Escuelas
+values (02, '6797545')
+
+SELECT *
+FROM Escuelas
+
+INSERT INTO Carreras
+values (03, '7982')
+INSERT INTO Carreras
+values (04, '6780')
+
+SELECT *
+FROM Carreras

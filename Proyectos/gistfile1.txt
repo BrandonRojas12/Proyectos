@@ -1,0 +1,43 @@
+objeto :- write('{'), read(X), (X='atributo'->atributo;
+                                write('')), write('}').
+atributo:- cadena, write(':'), valor,a1.
+a1 :- read(X), (X='atributo'->write(','),atributo;
+                    X='fin'->write('')).
+valor :- read(X), (X='numero'->numero;
+                    X='cadena'->cadena;
+                    X='metodo'->metodo;                    
+                    X='objeto'->objeto).
+metodo:- write('"function() {'),instruccion,write('return isan;}"').
+
+instruccion:- read(X), (X='asignacion'->asignacion;
+                    X='decision'->decision;
+                    X='fin'->write('')).
+decision:- write('if ('),read(X),write(X),write(')'),verdadero, falso.
+verdadero:- write('{'),instruccion,write('}').
+falso:- write('else{'),instruccion,write('}').
+asignacion:- read(X),write(X),write('='),read(Y),write(Y),write(';'),instruccion.                    
+cadena:- write('"'),read(X),write(X),write('"').
+numero:- read(X),write(X).
+:- objeto.
+
+atributo.
+precio.
+numero.
+200000.
+atributo.
+isan.
+metodo.
+decision.
+obj.precio<294794.45.
+asignacion.
+isan.
+obj.precio*0.02.
+fin.
+decision.
+obj.precio<353756.88.
+asignacion.
+isan.
+5895.85+(obj.precio-294797.45)*0.05.
+fin.
+fin.
+fin.
